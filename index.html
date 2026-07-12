@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>徳岡優生 産業医オフィス</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --bg: #f8f7f5;
+      --sage: #b8c9b8;
+      --sage-light: #e8efe8;
+      --sage-dark: #7a9e7a;
+      --text: #3a3a3a;
+      --text-light: #6b6b6b;
+      --accent: #7a9e7a;
+      --border: #e0e8e0;
+      --section-pad: 80px 24px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      font-size: 15px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .header-logo .name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.05em;
+    }
+
+    .header-logo .sub {
+      font-size: 10px;
+      color: var(--text-light);
+      letter-spacing: 0.12em;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      font-size: 12px;
+      color: var(--text-light);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    .btn-contact {
+      background: var(--accent);
+      color: var(--white) !important;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 12px !important;
+      letter-spacing: 0.08em;
+      transition: background 0.2s !important;
+    }
+
+    .btn-contact:hover { background: var(--sage-dark) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #eef4ee 0%, #f8f7f5 50%, #eef1f4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 24px 60px;
+    }
+
+    .hero-inner { max-width: 680px; }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 28px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 28px;
+      letter-spacing: 0.04em;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 44px;
+      line-height: 2;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      padding: 14px 36px;
+      border-radius: 28px;
+      font-size: 13px;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .hero-btn:hover {
+      background: var(--sage-dark);
+      transform: translateY(-1px);
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: var(--section-pad); }
+
+    .section-inner { max-width: 800px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 36px;
+      line-height: 1.6;
+      letter-spacing: 0.04em;
+    }
+
+    .section-body {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 2.1;
+    }
+
+    .bg-light { background: var(--bg); }
+    .bg-sage { background: var(--sage-light); }
+
+    /* ── SERVICE TABLE ── */
+    .service-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 32px;
+      font-size: 14px;
+    }
+
+    .service-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .service-table td {
+      padding: 16px 8px;
+      vertical-align: top;
+      line-height: 1.8;
+    }
+
+    .service-table td:first-child {
+      width: 38%;
+      color: var(--text);
+      font-weight: 500;
+      padding-right: 24px;
+    }
+
+    .service-table td:last-child {
+      color: var(--text-light);
+    }
+
+    /* ── MERIT ── */
+    .merit-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 24px;
+    }
+
+    /* ── AREA & FEE ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 32px;
+    }
+
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+
+    .info-card h3 {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .info-card p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 2;
+    }
+
+    .fee-main {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 24px;
+      color: var(--text);
+      font-weight: 600;
+      margin: 8px 0;
+    }
+
+    /* ── REASON ── */
+    .reason-text {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 2.2;
+    }
+
+    .reason-text p + p { margin-top: 20px; }
+
+    /* ── PROFILE ── */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 48px;
+      align-items: start;
+      margin-top: 8px;
+    }
+
+    .profile-img-placeholder {
+      aspect-ratio: 3/4;
+      background: var(--sage-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sage);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+    }
+
+    .profile-body p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 2.1;
+      margin-bottom: 24px;
+    }
+
+    .credential-list {
+      list-style: none;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    .credential-list li {
+      font-size: 13px;
+      color: var(--text-light);
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .credential-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ── Q&A ── */
+    .qa-list { margin-top: 16px; }
+
+    details {
+      border-bottom: 1px solid var(--border);
+    }
+
+    details:first-child { border-top: 1px solid var(--border); }
+
+    summary {
+      padding: 20px 4px;
+      font-size: 14px;
+      color: var(--text);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: '+';
+      font-size: 20px;
+      color: var(--accent);
+      font-weight: 300;
+      flex-shrink: 0;
+      margin-left: 16px;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      content: '−';
+    }
+
+    .qa-answer {
+      padding: 0 4px 20px;
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 2;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: linear-gradient(135deg, #eef4ee 0%, #eef1f4 100%);
+    }
+
+    .contact-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 36px;
+      line-height: 2;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .form-group label span {
+      color: var(--accent);
+      margin-left: 4px;
+      font-size: 10px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 14px;
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .privacy-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .privacy-check input { margin-top: 3px; accent-color: var(--accent); }
+
+    .submit-btn {
+      align-self: center;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      padding: 14px 48px;
+      border-radius: 28px;
+      font-size: 14px;
+      font-family: 'Noto Sans JP', sans-serif;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .submit-btn:hover {
+      background: var(--sage-dark);
+      transform: translateY(-1px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.7);
+      padding: 48px 24px 32px;
+      text-align: center;
+    }
+
+    .footer-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 8px;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-catch {
+      font-size: 12px;
+      margin-bottom: 24px;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-area {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .footer-credentials {
+      font-size: 11px;
+      margin-bottom: 28px;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-policy {
+      font-size: 11px;
+      margin-bottom: 20px;
+    }
+
+    .footer-policy a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--sage);
+      margin: 0 auto 40px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { display: none; }
+      .two-col { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .profile-grid { grid-template-columns: 1fr; }
+      .profile-img-placeholder { aspect-ratio: 16/9; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-logo">
+    <span class="name">徳岡優生 産業医オフィス</span>
+    <span class="sub">Occupational Medicine Office</span>
+  </div>
+  <nav>
+    <a href="#service">サービス内容</a>
+    <a href="#area">対応エリア・料金</a>
+    <a href="#profile">プロフィール</a>
+    <a href="#qa">Q&amp;A</a>
+    <a href="#contact" class="btn-contact">まずはご相談ください</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Occupational Medicine</p>
+    <h1>健康に働き続けられる職場を、<br><em>一緒につくります。</em></h1>
+    <p class="hero-desc">福山市を中心に、医療と職場をつなぐ産業医として<br>企業の健康課題に向き合います。</p>
+    <a href="#contact" class="hero-btn">まずはご相談ください</a>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section id="service" class="bg-light">
+  <div class="section-inner">
+    <p class="section-label">Service</p>
+    <h2 class="section-title">サービス概要</h2>
+    <div class="section-body">
+      産業医として、職場の健康をトータルでサポートします。<br>
+      職場巡視や健康相談といった基本業務から、メンタルヘルスへの専門的な対応まで、企業のニーズに合わせて柔軟に対応いたします。
+    </div>
+    <table class="service-table">
+      <tr>
+        <td>嘱託産業医業務</td>
+        <td>月1回・2ヶ月に1回など、訪問頻度は柔軟にご相談いただけます</td>
+      </tr>
+      <tr>
+        <td>職場巡視・健康相談</td>
+        <td>産業医業務全般に対応いたします</td>
+      </tr>
+      <tr>
+        <td>メンタルヘルス対応</td>
+        <td>精神科専門医としての専門的サポート</td>
+      </tr>
+      <tr>
+        <td>追加訪問</td>
+        <td>必要に応じて別途対応可</td>
+      </tr>
+      <tr>
+        <td>オンライン面談</td>
+        <td>場所を問わず対応</td>
+      </tr>
+      <tr>
+        <td>衛生講話</td>
+        <td>メンタルヘルスをテーマに別途対応可</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- MERIT -->
+<section id="merit">
+  <div class="section-inner">
+    <p class="section-label">Merit</p>
+    <h2 class="section-title">産業医を活用するメリット</h2>
+    <div class="merit-card">
+      <p class="section-body">
+        従業員が健康に、安心して働ける環境は、事業者にとっても大切な基盤です。<br><br>
+        人材の確保が難しくなっている今、長く活躍し続けてくれる従業員の存在は、企業にとってかけがえのない財産です。健康で働きやすい職場づくりは、従業員一人ひとりのためであると同時に、組織の安定と成長を支えることにつながると考えています。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- AREA & FEE -->
+<section id="area" class="bg-sage">
+  <div class="section-inner">
+    <p class="section-label">Area &amp; Fee</p>
+    <h2 class="section-title">対応エリア・料金</h2>
+    <div class="two-col">
+      <div class="info-card">
+        <h3>対応エリア</h3>
+        <p>福山市を中心に、西は広島市、東は岡山市まで車でお伺いします。オンライン面談にも対応しておりますので、エリア外についてもお気軽にご相談ください。</p>
+      </div>
+      <div class="info-card">
+        <h3>料金</h3>
+        <p class="fee-main">月額 3万円〜</p>
+        <p>月1回・2時間を基本とします。<br>訪問時間の超過や追加対応は、1時間あたり1万円を目安に別途ご相談いたします。<br>交通費は実費を別途申し受けます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REASON -->
+<section id="reason">
+  <div class="section-inner">
+    <p class="section-label">Why I Became an Occupational Physician</p>
+    <h2 class="section-title">私が産業医を目指した理由</h2>
+    <div class="reason-text">
+      <p>医療の現場と職場の現場、その両方を知る産業医でありたいと考えています。</p>
+      <p>精神科医として長年診療を続ける中で、気づいたことがあります。医療の側からだけでは、職場のことが見えていなかった、ということです。企業の文化・働き方・人間関係・評価の仕組み——実際に現場に足を運び、現実を自分の目で見なければ、本当の意味で「働く人の健康」を支えることはできない。そう感じ、産業医として開業しました。</p>
+      <p>事業者の皆さまには、労働衛生に関する判断をともに考え、それぞれの企業の実情に合った産業医活動を提供したいと考えています。そのために、職場に足を運び、事業者・従業員の皆さまの声を直接伺いながら、その職場ならではの課題や実情を丁寧に把握することを大切にしています。事業者・従業員の双方が納得できる決定に導けるよう努めるとともに、皆さまの本業の妨げにならないことを常に念頭に置きながら活動してまいります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section id="profile" class="bg-light">
+  <div class="section-inner">
+    <p class="section-label">Profile</p>
+    <h2 class="section-title">プロフィール</h2>
+    <div class="profile-grid">
+      <div class="profile-img-placeholder">写真</div>
+      <div class="profile-body">
+        <p>福山市出身で、高校まで福山で過ごしました。</p>
+        <p>2010年に琉球大学医学部を卒業し、沖縄県で初期研修を修了後、北海道で後期研修を開始しました。その後、地元・福山に戻り、精神科病院に勤務。精神科専門医・精神保健指定医として14年にわたり精神科医療に携わってまいりました。</p>
+        <p>2025年に日本医師会認定産業医資格を取得し、2026年に産業医として開業いたしました。現在、嘱託産業医として企業との契約実績があります。</p>
+        <ul class="credential-list">
+          <li>精神科専門医</li>
+          <li>精神保健指定医</li>
+          <li>日本医師会認定産業医</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Q&A -->
+<section id="qa">
+  <div class="section-inner">
+    <p class="section-label">Q&amp;A</p>
+    <h2 class="section-title">よくあるご質問</h2>
+    <div class="qa-list">
+      <details>
+        <summary>産業医との契約までの流れを教えてください。</summary>
+        <div class="qa-answer">まずはお問い合わせフォームよりご連絡ください。企業規模・業種・ご要望をお聞きした上で、無料にてご提案いたします。契約形態は嘱託産業医（月1回〜）から対応しております。</div>
+      </details>
+      <details>
+        <summary>費用はどのくらいかかりますか？</summary>
+        <div class="qa-answer">基本は月額3万円〜、月1回2時間を基本としております。訪問頻度・時間・企業規模に応じて柔軟にご相談に応じます。まずはお気軽にお問い合わせください。</div>
+      </details>
+      <details>
+        <summary>対応エリアはどこですか？</summary>
+        <div class="qa-answer">福山市を中心に、西は広島市・東は岡山市まで車でお伺いします。エリア外についてもオンライン面談での対応が可能ですので、一度ご相談ください。</div>
+      </details>
+      <details>
+        <summary>メンタルヘルス対応に強みはありますか？</summary>
+        <div class="qa-answer">はい。精神保健指定医・精神科専門医としてのキャリアを活かし、職場のメンタルヘルス対応に積極的に取り組んでいます。休職・復職支援、ハイリスク者面談、管理職向け衛生講話など、幅広く対応できます。</div>
+      </details>
+      <details>
+        <summary>通常の訪問以外にも対応してもらえますか？</summary>
+        <div class="qa-answer">必要に応じて追加訪問・オンライン面談に対応します。また、嘱託産業医契約とは別に、メンタルヘルスをテーマにした衛生講話のご依頼も承っております。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-inner">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">お問い合わせ</h2>
+    <p class="contact-desc">お気軽にお問い合わせください。内容を確認の上、メールにてご返信いたします。</p>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>会社名<span>必須</span></label>
+          <input type="text" placeholder="例：株式会社○○" required>
+        </div>
+        <div class="form-group">
+          <label>担当者名<span>必須</span></label>
+          <input type="text" placeholder="例：山田 太郎" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>メールアドレス<span>必須</span></label>
+          <input type="email" placeholder="例：info@example.com" required>
+        </div>
+        <div class="form-group">
+          <label>従業員数<span>必須</span></label>
+          <select required>
+            <option value="">選択してください</option>
+            <option>10人未満</option>
+            <option>10〜29人</option>
+            <option>30〜49人</option>
+            <option>50〜99人</option>
+            <option>100〜299人</option>
+            <option>300人以上</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>お問い合わせ内容<span>必須</span></label>
+        <textarea placeholder="ご質問・ご要望をご記入ください" required></textarea>
+      </div>
+      <label class="privacy-check">
+        <input type="checkbox" required>
+        個人情報保護方針に同意する
+      </label>
+      <button type="submit" class="submit-btn">送信する</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-name">徳岡優生 産業医オフィス</p>
+  <p class="footer-catch">健康に働き続けられる職場を、一緒につくります。</p>
+  <p class="footer-area">対応エリア：福山市を中心に、西は広島市・東は岡山市まで</p>
+  <p class="footer-credentials">精神科専門医｜精神保健指定医｜日本医師会認定産業医</p>
+  <p class="footer-policy"><a href="#">プライバシーポリシー</a></p>
+  <p class="footer-copy">© 2026 徳岡優生 産業医オフィス</p>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert('お問い合わせありがとうございます。内容を確認の上、メールにてご返信いたします。');
+  }
+</script>
+
+</body>
+</html>
