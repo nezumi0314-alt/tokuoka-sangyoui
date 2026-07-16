@@ -626,7 +626,7 @@
       <div class="info-card">
         <h3>料金</h3>
         <p class="fee-main">月額 3万円〜</p>
-        <p>月1回・2時間を基本とします。<br>訪問時間の超過や追加対応は、1時間あたり1万円を目安に別途ご相談いたします。<br>交通費は実費を別途申し受けます。</p>
+        <p>月1回・1時間を基本とします。<br>訪問時間の超過や追加対応は、1時間あたり1万円を目安に別途ご相談いたします。<br>交通費は実費を別途申し受けます。</p>
       </div>
     </div>
   </div>
@@ -702,25 +702,25 @@
     <p class="section-label">Contact</p>
     <h2 class="section-title">お問い合わせ</h2>
     <p class="contact-desc">お気軽にお問い合わせください。内容を確認の上、メールにてご返信いたします。</p>
-    <form class="contact-form" onsubmit="handleSubmit(event)">
+    <form class="contact-form" action="https://formspree.io/f/xwvgvadb" method="POST">
       <div class="form-row">
         <div class="form-group">
           <label>会社名<span>必須</span></label>
-          <input type="text" placeholder="例：株式会社○○" required>
+          <input type="text" placeholder="例：株式会社○○" name="会社名" required>
         </div>
         <div class="form-group">
           <label>担当者名<span>必須</span></label>
-          <input type="text" placeholder="例：山田 太郎" required>
+          <input type="text" placeholder="例：山田 太郎" name="担当者名" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label>メールアドレス<span>必須</span></label>
-          <input type="email" placeholder="例：info@example.com" required>
+          <input type="email" placeholder="例：info@example.com" name="メールアドレス" required>
         </div>
         <div class="form-group">
           <label>従業員数<span>必須</span></label>
-          <select required>
+          <select name="従業員数" required>
             <option value="">選択してください</option>
             <option>10人未満</option>
             <option>10〜29人</option>
@@ -733,7 +733,7 @@
       </div>
       <div class="form-group">
         <label>お問い合わせ内容<span>必須</span></label>
-        <textarea placeholder="ご質問・ご要望をご記入ください" required></textarea>
+        <textarea placeholder="ご質問・ご要望をご記入ください" name="お問い合わせ内容" required></textarea>
       </div>
       <label class="privacy-check">
         <input type="checkbox" required>
