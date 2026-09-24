@@ -448,6 +448,89 @@
       letter-spacing: 0.03em;
     }
 
+    .column-archive {
+      margin-top: 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .column-archive-toggle {
+      width: 100%;
+      background: var(--white);
+      border: none;
+      padding: 18px 28px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 13px;
+      color: var(--text-light);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      letter-spacing: 0.04em;
+      transition: background 0.2s;
+    }
+
+    .column-archive-toggle:hover {
+      background: var(--sage-light);
+    }
+
+    .column-archive-toggle .toggle-icon {
+      font-size: 18px;
+      color: var(--accent);
+      font-weight: 300;
+      transition: transform 0.2s;
+    }
+
+    .column-archive-body {
+      display: none;
+      padding: 0 28px 24px;
+      background: var(--white);
+    }
+
+    .column-archive-body.open {
+      display: block;
+    }
+
+    .column-archive-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .column-archive-item:last-child {
+      border-bottom: none;
+    }
+
+    .column-archive-item .column-meta {
+      margin-bottom: 8px;
+    }
+
+    .column-archive-item h4 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+
+    .column-archive-item p {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 2;
+      margin-bottom: 8px;
+    }
+
+    .column-archive-item p:last-child {
+      margin-bottom: 0;
+    }
+
+    .column-archive-item hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 12px 0;
+    }
+
     /* ── CONTACT ── */
     .contact-section {
       background: linear-gradient(135deg, #eef4ee 0%, #eef1f4 100%);
@@ -782,20 +865,21 @@
 
     <div class="column-grid">
 
-      <!-- コラム記事1 -->
+      <!-- 最新記事1 -->
       <article class="column-card">
         <div class="column-meta">
-          <span class="column-tag">メンタルヘルス</span>
-          <span class="column-date">2025年10月</span>
+          <span class="column-tag">健康管理</span>
+          <span class="column-date">2026年9月</span>
         </div>
-        <h3>ストレスチェックの結果、その後どうしていますか？</h3>
-        <p>2015年に義務化されたストレスチェック制度も、すでに10年が経ちます。多くの企業で毎年実施されるようになりましたが、「集計結果を眺めて終わり」という状況に陥っていないでしょうか。</p>
-        <p>ストレスチェックの本来の目的は、一次予防——つまり、メンタルヘルス不調になる前に手を打つことです。結果の活用で大切なのは、個人の高ストレス者への対応だけでなく、集団分析から職場環境そのものを改善していく視点です。</p>
+        <h3>なぜ会社は健康診断を実施するのか――法的義務と「人を活かす」視点</h3>
+        <p>事業所が毎年行う定期健康診断。「法律で決まっているから」という認識は正しいのですが、それだけで終わらせてしまうと、健康診断が持つ本来の意味を見落としてしまいます。</p>
+        <p>会社が従業員に対して負う義務のひとつに、<strong>安全配慮義務</strong>があります。労働契約法第5条に定められたこの義務は、「使用者は、労働者がその生命、身体等の安全を確保しつつ労働することができるよう、必要な配慮をするものとする」というものです。健康診断の実施は、この義務を果たすための基本的な手段のひとつと位置づけられています。もし健康診断を怠り、従業員が業務に起因して健康を損なった場合、会社は安全配慮義務違反として損害賠償責任を問われる可能性があります。「知らなかった」では済まされない点に注意が必要です。</p>
         <hr class="column-divider">
-        <p>産業医との面接指導は、申し出た従業員のケアだけに留まりません。「どの部署・どの仕事の特性がストレス要因になっているか」を読み解き、管理職や人事担当者と共有することが、職場全体の改善につながります。ストレスチェックの結果レポートを産業医と一緒に見直してみませんか。</p>
+        <p>もうひとつ、健康診断には<strong>従業員を適切な業務に配置する</strong>という重要な役割があります。たとえば、健康診断で血圧や心疾患のリスクが高いと判明した従業員を、高所作業や深夜勤務、過重な肉体労働に配置し続けることは、会社として大きなリスクを抱えることになります。健康診断の結果をもとに産業医が就業判定を行い、「通常勤務可」「時間外制限が望ましい」「配置転換を要検討」といった意見を出すのは、まさにこのためです。</p>
+        <p>「健康診断は受けさせればいい」という対応から一歩進んで、結果を人事・労務管理に活かす仕組みをつくることが、これからの職場づくりには求められています。どのように活用すればよいかわからない場合は、産業医にご相談ください。</p>
       </article>
 
-      <!-- コラム記事2 -->
+      <!-- 最新記事2 -->
       <article class="column-card">
         <div class="column-meta">
           <span class="column-tag">職場復帰</span>
@@ -808,6 +892,27 @@
         <p>復職後の「試し出勤」や「段階的な業務拡大」といった具体的な計画を、会社として整備しておくことが、本人の再発防止と周囲の負担軽減の両方に効果的です。仕組みづくりが難しいと感じている場合は、産業医に相談いただくことができます。</p>
       </article>
 
+    </div>
+
+    <!-- 過去記事の折りたたみ -->
+    <div class="column-archive">
+      <button class="column-archive-toggle" onclick="toggleArchive()">
+        <span>過去のコラムを見る（1件）</span>
+        <span class="toggle-icon" id="archive-icon">+</span>
+      </button>
+      <div class="column-archive-body" id="archive-body">
+        <div class="column-archive-item">
+          <div class="column-meta">
+            <span class="column-tag">メンタルヘルス</span>
+            <span class="column-date">2025年10月</span>
+          </div>
+          <h4>ストレスチェックの結果、その後どうしていますか？</h4>
+          <p>2015年に義務化されたストレスチェック制度も、すでに10年が経ちます。多くの企業で毎年実施されるようになりましたが、「集計結果を眺めて終わり」という状況に陥っていないでしょうか。</p>
+          <p>ストレスチェックの本来の目的は、一次予防——つまり、メンタルヘルス不調になる前に手を打つことです。結果の活用で大切なのは、個人の高ストレス者への対応だけでなく、集団分析から職場環境そのものを改善していく視点です。</p>
+          <hr>
+          <p>産業医との面接指導は、申し出た従業員のケアだけに留まりません。「どの部署・どの仕事の特性がストレス要因になっているか」を読み解き、管理職や人事担当者と共有することが、職場全体の改善につながります。ストレスチェックの結果レポートを産業医と一緒に見直してみませんか。</p>
+        </div>
+      </div>
     </div>
 
     <p class="column-note">※ 今後も随時更新していきます。職場の健康管理に関してご不明な点は、お気軽にお問い合わせください。</p>
@@ -876,6 +981,14 @@
   function handleSubmit(e) {
     e.preventDefault();
     alert('お問い合わせありがとうございます。内容を確認の上、メールにてご返信いたします。');
+  }
+
+  function toggleArchive() {
+    const body = document.getElementById('archive-body');
+    const icon = document.getElementById('archive-icon');
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open');
+    icon.textContent = isOpen ? '+' : '−';
   }
 </script>
 
