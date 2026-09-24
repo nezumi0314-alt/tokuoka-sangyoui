@@ -372,6 +372,82 @@
       line-height: 2;
     }
 
+    /* ── COLUMN ── */
+    .column-grid {
+      display: grid;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .column-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+      transition: box-shadow 0.2s;
+    }
+
+    .column-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    .column-meta {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .column-tag {
+      font-size: 11px;
+      background: var(--sage-light);
+      color: var(--sage-dark);
+      padding: 3px 10px;
+      border-radius: 12px;
+      letter-spacing: 0.06em;
+    }
+
+    .column-date {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.04em;
+    }
+
+    .column-card h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 14px;
+      line-height: 1.7;
+    }
+
+    .column-card p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 2;
+      margin-bottom: 10px;
+    }
+
+    .column-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .column-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 16px 0;
+    }
+
+    .column-note {
+      font-size: 12px;
+      color: var(--text-light);
+      font-style: italic;
+      margin-top: 32px;
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+
     /* ── CONTACT ── */
     .contact-section {
       background: linear-gradient(135deg, #eef4ee 0%, #eef1f4 100%);
@@ -547,6 +623,7 @@
     <a href="#area">対応エリア・料金</a>
     <a href="#profile">プロフィール</a>
     <a href="#qa">Q&amp;A</a>
+    <a href="#column">コラム</a>
     <a href="#contact" class="btn-contact">まずはご相談ください</a>
   </nav>
 </header>
@@ -693,6 +770,47 @@
         <div class="qa-answer">必要に応じて追加訪問・オンライン面談に対応します。また、嘱託産業医契約とは別に、メンタルヘルスをテーマにした衛生講話のご依頼も承っております。</div>
       </details>
     </div>
+  </div>
+</section>
+
+<!-- COLUMN -->
+<section id="column" class="bg-light">
+  <div class="section-inner">
+    <p class="section-label">Column</p>
+    <h2 class="section-title">産業医コラム</h2>
+    <p class="section-body">企業の担当者の方に向けて、職場の健康管理に関するトピックをお届けします。現場の精神科医・産業医として感じること、知っておくと役立つ知識を、できるだけわかりやすい言葉で書いていきます。</p>
+
+    <div class="column-grid">
+
+      <!-- コラム記事1 -->
+      <article class="column-card">
+        <div class="column-meta">
+          <span class="column-tag">メンタルヘルス</span>
+          <span class="column-date">2025年10月</span>
+        </div>
+        <h3>ストレスチェックの結果、その後どうしていますか？</h3>
+        <p>2015年に義務化されたストレスチェック制度も、すでに10年が経ちます。多くの企業で毎年実施されるようになりましたが、「集計結果を眺めて終わり」という状況に陥っていないでしょうか。</p>
+        <p>ストレスチェックの本来の目的は、一次予防——つまり、メンタルヘルス不調になる前に手を打つことです。結果の活用で大切なのは、個人の高ストレス者への対応だけでなく、集団分析から職場環境そのものを改善していく視点です。</p>
+        <hr class="column-divider">
+        <p>産業医との面接指導は、申し出た従業員のケアだけに留まりません。「どの部署・どの仕事の特性がストレス要因になっているか」を読み解き、管理職や人事担当者と共有することが、職場全体の改善につながります。ストレスチェックの結果レポートを産業医と一緒に見直してみませんか。</p>
+      </article>
+
+      <!-- コラム記事2 -->
+      <article class="column-card">
+        <div class="column-meta">
+          <span class="column-tag">職場復帰</span>
+          <span class="column-date">2025年11月</span>
+        </div>
+        <h3>休職した社員が戻ってくるとき、会社に求められること</h3>
+        <p>メンタルヘルス不調による休職から職場復帰する際、多くの場合は主治医の「復職可」の診断書が提出されます。しかし、主治医が「日常生活を送れる」と判断した状態と、「職場で働ける」状態は、必ずしも同じではありません。</p>
+        <p>産業医の役割の一つは、この「ギャップ」を埋めることです。本人の状態、業務内容、職場環境を照らし合わせながら、どのような条件・ペースで復帰するかを会社・本人・主治医と連携して調整します。</p>
+        <hr class="column-divider">
+        <p>復職後の「試し出勤」や「段階的な業務拡大」といった具体的な計画を、会社として整備しておくことが、本人の再発防止と周囲の負担軽減の両方に効果的です。仕組みづくりが難しいと感じている場合は、産業医に相談いただくことができます。</p>
+      </article>
+
+    </div>
+
+    <p class="column-note">※ 今後も随時更新していきます。職場の健康管理に関してご不明な点は、お気軽にお問い合わせください。</p>
   </div>
 </section>
 
